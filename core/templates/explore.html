@@ -1,0 +1,213 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore</title>
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <link rel="stylesheet" href="{% static '/css/resp.css' %}">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="{% static '/css/exp.css' %}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="icon" href="https://static.cdninstagram.com/rsrc.php/v3/yt/r/30PrGfR3xhB.png" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div  style="border-right: 1px rgb(185, 185, 185) solid;" class="col-md-2">
+                <div style="cursor: pointer;">
+                    <h4 style=" color: black; padding: 15px; ">Instagram</h4>
+                </div>
+                <a style="text-decoration: none;color: black;" href="./insta.html">
+                <div class="icon-text">
+                    <img class="icons" src="{% static '/img/house.png' %}" alt="">
+                    <p class="p-1">Home</p>
+                </div>
+                </a>
+                <div class="icon-text">
+                    <img class="icons" src="{% static '/img/search.png' %}" alt="">
+                    <p class="p-1">Search</p>
+                </div>
+                <a style="text-decoration: none;color: black;" href="./explore.html">
+                <div class="icon-text">
+                     
+                    <img class="icons" src="{% static 'img/explore.png' %}" alt="">
+                    <p class="p-1">Explore</p>
+                </div></a>
+
+                <div class="icon-text" >
+                    <img class="icons" src="{% static '/img/reels.png' %}" alt="">
+                    <p class="p-1">Reels</p>
+                </div>
+                
+                <div class="icon-text">
+                    <img class="icons" src="{% static '/img/message.png' %}" alt="">
+                    <p class="p-1">Message</p>
+                </div>
+
+                <div class="icon-text">
+                    <img class="icons" src="{% static '/img/Notifications.png'%}" alt="">
+                    <p class="p-1">Notifications</p>
+                </div>
+
+                <div class="icon-text">
+                    <img class="icons" src="{% static '/img/create.png'%}" alt="">
+                    <p class="p-1">Create</p>
+                </div>
+                
+                <div class="icon-text">
+                    <img class="icons" src="{% static '/img/profile.png'%}" alt="">
+                    <p class="p-1">Profile</p>
+                </div>
+
+                <div class="icon-text">
+                    <img class="icons" src="{% static '/img/more.png'%}" alt="">
+                    <p class="p-1">More</p>
+                </div>
+            </div>
+
+            <div   class="col-md-10" >
+                <div class="container-fluid">
+                    <div class="row" style="padding-top: 30px;">
+                        {% for post in posts %}
+                        <div id="myOverlay{{post.id}}" class="overlay">
+                            <span class="closebtn" onclick="closeSearch{{post.id}}()" title="Close Overlay">×</span>
+                            <div class="overlay-content">
+                              <form action="">
+                               
+                                <!-- <img src="./stat/img/masindiqaqa.jpg" alt=""> -->
+                                    <!-- <main class="content" > -->
+                                        <div class="res-1 " style="padding-bottom: 50px;padding-left: 110px;padding-right: 120px;">
+                                            <div class="card-item" style="background-color: #ffffff;">
+                                                <div style="display: flex;height: 550px;" > 
+                                                    
+                                                    <img src="{{post.image.url}}" style="width: 600px;" alt="" srcset="">
+                                                    
+                                                   
+                            
+                                                <div class="full" style="border: 1px solid rgba(0,0,0,.125);padding-top: 15px;">
+                                                     <div class="card-header"  >
+                                                     <div class="card-hover" style="padding-top: 15px;">
+                                                         <img style="cursor: pointer;" src="./stat/img/img-2.jpeg" alt="">
+                                                          <span  style="color: black;margin-left: 10px;cursor: pointer;">username</span>
+                              
+                                  
+                                                     </div>
+                                                         <img class="open1"   style="width: 25px;cursor: pointer;color: white;" src="./stat/img/salam.png" alt="">
+                                                     
+                                                    </div>
+                                                <div style="padding: 10px;">
+                                                     <div style="width: 500px;overflow-y: scroll;overflow-x: hidden;height: 300px;">
+                                                        <div>
+                                                        <div class="card-hover " style="padding-top: 15px;" >
+                                                            <img style="cursor: pointer;" src="./stat/img/img-2.jpeg" alt="">
+                                                            <span   style=" margin-left: 20px;cursor: pointer;">username      
+                                                            <span   class="text-dark"  style="color: black;margin-left: 10px;cursor: pointer none; ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum doloremque ducimus labore?</span>
+                                                            </span>
+                                                        </div>
+                                                        <p style="color: #989899;margin-left: 60px;cursor: pointer;">1h  378 beğenme Yanıtla Çevirsine bax </p>
+                                                        </div>
+                                                        
+                                                        <div class="card-hover" style="padding-top: 15px;">
+                                                            <img style="cursor: pointer;" src="./stat/img/img-2.jpeg" alt="">
+                                                            <span  style="color: rgb(5, 5, 5);margin-left: 20px;cursor: pointer;">username    
+                                                            <span class="text-dark"  style="color: black;margin-left: 10px;cursor: pointer;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum doloremque ducimus labore?</span>
+                                                        </span>
+                                                        </div>
+                                                        <div class="card-hover" style="padding-top: 15px;">
+                                                            <img style="cursor: pointer;" src="./stat/img/img-2.jpeg" alt="">
+                                                            <span  style="color: rgb(5, 5, 5);margin-left: 20px;cursor: pointer;">username     
+                                                            <span class="text-dark"  style="color: black;margin-left: 10px;cursor: pointer;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum doloremque ducimus labore?</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="card-hover" style="padding-top: 15px;">
+                                                            <img style="cursor: pointer;" src="./stat/img/img-2.jpeg" alt="">
+                                                            <span  style="color: rgb(5, 5, 5);margin-left: 20px;cursor: pointer;">username     
+                                                            <span class="text-dark"  style="color: black;margin-left: 10px;cursor: pointer;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum doloremque ducimus labore?</span>
+                                                        </span>
+                                                        </div>
+                                                        <div class="card-hover" style="padding-top: 15px;">
+                                                            <img style="cursor: pointer;" src="./stat/img/img-2.jpeg" alt="">
+                                                            <span  style="color: rgb(5, 5, 5);margin-left: 20px;cursor: pointer;">username     
+                                                            <span class="text-dark"  style="color: black;margin-left: 10px;cursor: pointer;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum doloremque ducimus labore?</span>
+                                                        </span>
+                                                        </div>
+                                                    </div>   
+                                                    <div class="card-top" style="padding-bottom: 10px;">
+                                                         
+                                                    <div>
+                                                        <img style="width: 20px;cursor: pointer;" src="./stat/img/heart.png" alt="">
+                                                        <img style="width: 20px;margin-left: 10px;cursor: pointer;" src="./stat/img/chat.png" alt="">
+                                                        <img style="width: 20px;margin-left: 10px;cursor: pointer;" src="./stat/img/send.png" alt="">
+                                                    </div>
+                                                        
+                                                    <div>
+                                                        <img style="width: 20px;margin-left: 5px;cursor: pointer;" src="./stat/img/ribbon.png" alt="">
+                                                    </div>  
+                                                  </div>
+                                                  <p style="color: rgb(0, 0, 0);cursor: pointer;">18,874 likes</p>
+                                                  <div style="display: flex;">
+                                                  
+                                                </div>
+                                                <p style="font-weight: 200; color: darkgrey;margin-top: -10px;">1 yorumun tümünü gör
+                                                </p>
+                                                <input style="border: none;width: 100%;margin-top: -10px;outline: none;font-size: 15px;"  type="text" name="" id="" placeholder="Yorum ekle">
+                                            </div>
+                                                 
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div> 
+                                    <!-- </main> -->
+                            
+                              </form>
+                            </div>
+                          </div>
+
+                          <script>
+                            function openSearch{{post.id}}() {
+                              document.getElementById("myOverlay{{post.id}}").style.display = "block";
+                            }
+                            
+                            function closeSearch{{post.id}}() {
+                              document.getElementById("myOverlay{{post.id}}").style.display = "none";
+                            }
+                        </script>
+
+                        <div class="col-md-4" style="padding-bottom: 5px;"  >
+                            <div onclick="openSearch{{post.id}}()" class="containerr" style="width: 320px;cursor: pointer;background-image: url({{post.image.url}});height: 280px;background-size: cover; "  class="image">
+                              <!-- <img   onclick="openSearch()" src="{{post.image.url}}" alt="Avatar" class="image"  > -->
+                              <div class="middle">
+                                <div class="text">
+                                    <img style="width: 20px;cursor: pointer;color: white; " class="olcu" src="{% static '/img/heart.png' %}" alt="">
+                                    <h4 style="margin-left: 10px; " class="olcu">8.195</h4>
+                                    <img style="width: 20px;margin-left: 10px;cursor: pointer; " class="olcu" src="{% static '/img/chat.png' %}" alt="">
+                                    <h4 style="margin-left: 10px; " class="olcu">1.43</h4>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+
+<!-- fullscrenn -->
+
+
+<!-- fullscrenn -->
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+</body>
+</html>
