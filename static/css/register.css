@@ -1,0 +1,29 @@
+.login-1{
+    border: 1px solid rgba(0,0,0,.125);
+    width: 400px;
+    text-align: center;
+    padding-top: 20px;
+}
+.login-2{
+    font-size: 20px;
+    color:#8f7e7e;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+     
+}
+.login-input{
+    width: 280px;
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid rgb(158, 157, 157) !important;
+    outline: none;
+}
+a{
+   color: black;
+}
+
+footer a {
+    color: rgb(87, 81, 81) !important;
+    margin-left: 10px;
+}

@@ -25,3 +25,11 @@ def profile(request):
         'posts':posts
     }
     return render(request, 'profile.html', context)
+
+
+def login(request):
+    posts = Post.objects.all()
+    context = {
+        'posts':posts
+    }
+    return render(request, 'login.html', context)

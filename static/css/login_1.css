@@ -1,0 +1,54 @@
+.instagram-png{
+    width: 174px;
+    height: 50px;
+    margin-top: 50px;
+}
+
+.login-btn{
+    color: white;
+    background-color: #41a1ef;
+    border: none;
+    border-radius: 10px;
+    padding: 6px;
+    width: 270px;
+    outline: none;
+}
+
+
+
+.Phone-png{
+    margin-top: 12px;
+    width: 370px;
+    margin-left: 130px;
+    
+}
+
+.inputs{
+    width: 270px; 
+    background-color: #F2F3F5;   
+    border: 1px solid #DADDE1;
+    padding: 8px;
+}
+
+
+.a-style{
+    color: #385898 !important;
+    outline: none !important;
+    text-decoration: none !important;
+    font-size: 12px !important;
+
+}
+
+
+.a-class{
+    color: #385185 !important;
+    outline: none !important;
+    text-decoration: none !important;
+}
+
+
+.Signup{
+    color: #50a7ee !important;
+    outline: none !important;
+    text-decoration: none !important;
+}
