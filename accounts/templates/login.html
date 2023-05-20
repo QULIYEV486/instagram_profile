@@ -20,15 +20,21 @@
                     <div >
                         <img class="instagram-png" src="{% static '/img/instagram.png' %}" alt="">
                     </div>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <div style="margin-top: 50px;">
+                            {{form.username}}
+                            {{form.username.errors}}
 
-                    <div style="margin-top: 50px;">
-                        <input class="inputs"  placeholder="Phone number, username, or email" type="text">
-                    </div>
+                        </div>
 
-                    <div style="margin-top: 6px;">
-                        <input class="inputs" placeholder="Password"  type="text">
-                    </div>
-                    
+                        <div style="margin-top: 6px;">
+                            {{form.password}}
+                            {{form.password.errors}}
+                        </div>
+
+                        <input type="submit">
+                    </form>
                     <div style="margin-top: 15px;">
                         <a href=""><button class="login-btn">Log in</button></a>
                     </div>

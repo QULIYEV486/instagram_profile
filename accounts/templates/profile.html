@@ -73,17 +73,21 @@
             <div class="col-md-10">
                 <div class="container-fluid" style="text-align: center;" >
                     <div style="display: flex; justify-content: space-evenly; margin-top: 30px; padding-right: 60px;">
-                        <a href=""><img class="profile-png" src="{{user.image.url}}" alt=""></a>
+                        {% if request.user.image%}
+                        <a href=""><img class="profile-png" src="{{request.user.image.url}}" alt=""></a>
+                        {% else %}
+                        <a href=""><img class="profile-png" src="{% static '/img/profile.png'%}" alt=""></a>
+                        {% endif %}
                         <div>
                             <div style="display: flex; padding: 10px;">
-                                <h5 style="font-family: sans-serif;" >{{user.username}} </h5>
+                                <h5 style="font-family: sans-serif;" >{{request.user.username}} </h5>
                                 <a href=""><button class="edit-btn">Edit profile</button></a>
                                 <a href=""><img style="width: 26px; margin-left: 15px" src="{% static '/img/PNG.png'%}" alt=""></a>
                             </div> 
                             <div style="display: flex; justify-content: space-between; padding: 10px;">
-                                <a class="a-tag" href="">{{user.posts.all.count}} posts</a>
-                                <a class="a-tag" href="">{{user.followers}} followers</a>
-                                <a class="a-tag"href="">{{user.following}} following</a>  
+                                <a class="a-tag" href="">{{request.user.posts.all.count}} posts</a>
+                                <a class="a-tag" href="">{{request.user.followers}} followers</a>
+                                <a class="a-tag"href="">{{request.user.following}} following</a>  
                             </div>
                         </div>  
                     </div>
@@ -98,8 +102,8 @@
                 <div style="text-align: center; margin-top: 15px;">
                     <div class="container-fluid">
                         <div class="row" style="justify-content: center;">
-                            {% if user.posts.all%}
-                            {% for post in user.posts.all  %}
+                            {% if request.user.posts.all%}
+                            {% for post in request.user.posts.all  %}
 
                             <div id="myOverlay{{post.id}}" class="overlay">
                                 <span class="closebtn" onclick="closeSearch{{post.id}}()" title="Close Overlay">×</span>
@@ -121,8 +125,8 @@
                                                     <div class="full" style="border: 1px solid rgba(0,0,0,.125);padding-top: 15px;">
                                                          <div class="card-header"  >
                                                          <div class="card-hover" style="padding-top: 15px;">
-                                                             <img style="cursor: pointer;" src="{{user.image.url}}" alt="">
-                                                              <span  style="color: black;margin-left: 10px;cursor: pointer;">{{user.username}} </span>
+                                                             <img style="cursor: pointer;" src="{{request.user.image.url}}" alt="">
+                                                              <span  style="color: black;margin-left: 10px;cursor: pointer;">{{request.user.username}}</span>
                                   
                                       
                                                          </div>

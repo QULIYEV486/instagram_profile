@@ -20,6 +20,12 @@
     
 }
 
+.a-style{
+    color: black !important;
+    outline: none !important;
+    text-decoration: none !important;
+
+}
 
 .profile_img{
     position: relative;
